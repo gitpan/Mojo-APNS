@@ -32,10 +32,11 @@
       },
       "runtime" : {
          "requires" : {
-            "Mojolicious" : "4.00"
+            "IO::Socket::SSL" : "1.75",
+            "Mojolicious" : "4"
          }
       }
    },
    "release_status" : "stable",
-   "version" : "0.04"
+   "version" : "0.0401"
 }

@@ -18,5 +18,6 @@ no_index:
     - t
     - inc
 requires:
-  Mojolicious: 4.00
-version: 0.04
+  IO::Socket::SSL: 1.75
+  Mojolicious: 4
+version: 0.0401
