@@ -25,4 +25,4 @@ resources:
   homepage: https://metacpan.org/release/Mojo-APNS
   license: http://dev.perl.org/licenses/
   repository: https://github.com/jhthorsen/mojo-apns
-version: 0.0403
+version: 0.0404
