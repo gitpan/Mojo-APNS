@@ -6,7 +6,7 @@
    "dynamic_config" : 1,
    "generated_by" : "ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.120921",
    "license" : [
-      "perl_5"
+      "artistic_2"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
@@ -22,7 +22,7 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Test::More" : "0.90"
+            "Test::More" : "0.88"
          }
       },
       "configure" : {
@@ -33,22 +33,19 @@
       "runtime" : {
          "requires" : {
             "IO::Socket::SSL" : "1.75",
-            "Mojolicious" : "4.30"
+            "Mojolicious" : "5.30"
          }
       }
    },
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "http://rt.cpan.org/NoAuth/Bugs.html?Dist=Mojo-APNS"
+         "web" : "https://github.com/jhthorsen/mojo-apns/issues"
       },
-      "homepage" : "https://metacpan.org/release/Mojo-APNS",
-      "license" : [
-         "http://dev.perl.org/licenses/"
-      ],
+      "homepage" : "https://github.com/jhthorsen/mojo-apns",
       "repository" : {
-         "url" : "https://github.com/jhthorsen/mojo-apns"
+         "url" : "https://github.com/jhthorsen/mojo-apns.git"
       }
    },
-   "version" : "0.0404"
+   "version" : "0.05"
 }
