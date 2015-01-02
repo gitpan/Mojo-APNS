@@ -6,7 +6,7 @@ Mojo::APNS - Apple Push Notification Service for Mojolicious
 
 =head1 VERSION
 
-0.05
+0.06
 
 =head1 DESCRIPTION
 
@@ -45,12 +45,12 @@ NOTE! This module will segfault if you swap L</key> and L</cert> around.
 
 use feature 'state';
 use Mojo::Base 'Mojo::EventEmitter';
-use Mojo::JSON;
+use Mojo::JSON 'encode_json';
 use Mojo::IOLoop;
 use constant FEEDBACK_RECONNECT_TIMEOUT => 5;
 use constant DEBUG => $ENV{MOJO_APNS_DEBUG} ? 1 : 0;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 =head1 EVENTS
 
@@ -111,8 +111,6 @@ has _gateway_port    => 2195;
 has _gateway_address => sub {
   $_[0]->sandbox ? 'gateway.sandbox.push.apple.com' : 'gateway.push.apple.com';
 };
-
-sub _json { state $json = Mojo::JSON->new }
 
 =head1 METHODS
 
@@ -198,19 +196,19 @@ sub send {
 
   $data->{aps} = {alert => $message, badge => int(delete $args{badge} || 0),};
 
-  if (length(my $sound = delete $args{sound})) {
-    $data->{aps}{sound} = $sound;
+  if (defined(my $sound = delete $args{sound})) {
+    $data->{aps}{sound} = $sound if length $sound;
   }
 
-  if (length(my $content_available = delete $args{content_available})) {
-    $data->{aps}{'content-available'} = $content_available;
+  if (defined(my $content_available = delete $args{content_available})) {
+    $data->{aps}{'content-available'} = $content_available if length $content_available;
   }
 
   if (%args) {
     $data->{custom} = \%args;
   }
 
-  $message = $self->_json->encode($data);
+  $message = encode_json $data;
 
   if (length $message > 256) {
     my $length = length $message;

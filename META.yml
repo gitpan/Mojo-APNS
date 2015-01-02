@@ -24,4 +24,4 @@ resources:
   bugtracker: https://github.com/jhthorsen/mojo-apns/issues
   homepage: https://github.com/jhthorsen/mojo-apns
   repository: https://github.com/jhthorsen/mojo-apns.git
-version: 0.05
+version: 0.06
