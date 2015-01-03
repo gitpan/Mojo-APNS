@@ -18,10 +18,10 @@ no_index:
     - t
     - inc
 requires:
-  IO::Socket::SSL: 1.75
+  IO::Socket::SSL: 1.84
   Mojolicious: 5.30
 resources:
   bugtracker: https://github.com/jhthorsen/mojo-apns/issues
   homepage: https://github.com/jhthorsen/mojo-apns
   repository: https://github.com/jhthorsen/mojo-apns.git
-version: 0.06
+version: 0.07
